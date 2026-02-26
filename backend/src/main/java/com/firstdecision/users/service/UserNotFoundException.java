@@ -1,0 +1,5 @@
+package com.firstdecision.users.service;
+
+public class UserNotFoundException extends RuntimeException {
+    public UserNotFoundException(String message) { super(message); }
+}

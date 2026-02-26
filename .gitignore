@@ -1,0 +1,31 @@
+# Node/Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/npm-debug.log*
+frontend/package-lock.json
+
+# Java/Maven
+backend/target/
+backend/*.log
+
+# IDE/Editor
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage/Reports
+coverage/
+reports/
+
+# Env/Secrets (if any)
+.env
+**/.env
+
+# Misc
+*.swp
+*.tmp
