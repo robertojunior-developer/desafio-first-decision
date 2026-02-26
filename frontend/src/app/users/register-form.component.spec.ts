@@ -3,6 +3,9 @@ import { RegisterFormComponent } from './register-form.component';
 import { provideRouter } from '@angular/router';
 import { UserService } from './user.service';
 import { of } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { importProvidersFrom } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 class UserServiceMock {
   create = jasmine.createSpy('create').and.returnValue(of({} as any));
@@ -15,7 +18,9 @@ describe('RegisterFormComponent', () => {
       imports: [RegisterFormComponent],
       providers: [
         provideRouter([]),
-        { provide: UserService, useClass: UserServiceMock }
+        { provide: UserService, useClass: UserServiceMock },
+        { provide: MatSnackBar, useValue: { open: () => {} } },
+        importProvidersFrom(NoopAnimationsModule)
       ]
     }).compileComponents();
   });
